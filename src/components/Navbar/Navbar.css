@@ -1,0 +1,134 @@
+/* =========================
+   Base Reset
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   Navbar Layout
+========================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* =========================
+   Navigation Links
+========================= */
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.links li a {
+  text-decoration: none;
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* =========================
+   CTA Button (Desktop)
+========================= */
+
+.cta button {
+  padding: 10px 18px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   Burger Button
+========================= */
+
+.burger {
+  display: none;
+}
+
+.burger button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   Tablet & Mobile
+========================= */
+
+@media (max-width: 1024px) {
+  /* Hide desktop CTA */
+  .cta {
+    display: none;
+  }
+
+  /* Show burger */
+  .burger {
+    display: block;
+  }
+
+  /* Hide links by default */
+  .links {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e5e5e5;
+    display: none;
+  }
+
+  /* Open state */
+  .links.open {
+    display: flex;
+  }
+
+  .links li {
+    padding: 16px 24px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .links li a {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   Mobile Refinement
+========================= */
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+}
