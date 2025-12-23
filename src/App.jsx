@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import MilzenKC from "./pages/MilzenKC";
 import Countertops from "./pages/Countertops";
@@ -21,6 +22,7 @@ function App() {
         {/* 404 fallback */}
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
       </Routes>
+      <Footer />
     </>
   );
 }
