@@ -1,0 +1,160 @@
+/* MilzenKC.css */
+.milzen-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+  /* Increased top padding to clear fixed navbar */
+  font-family: 'Roboto', sans-serif;
+  /* Fallback if not loaded, but aiming for clean look */
+}
+
+.milzen-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.milzen-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.milzen-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+/* Big Card Styles */
+.milzen-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* Soft, premium shadow */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Bouncy feel */
+  cursor: pointer;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.milzen-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  /* Big image area */
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.milzen-card:hover .card-image {
+  transform: scale(1.08);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.milzen-card:hover .card-overlay {
+  opacity: 0.8;
+}
+
+.card-body {
+  padding: 30px;
+  position: relative;
+  background: white;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  /* Pill shape */
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.card-button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* Hover reveal effect for a "Big Card" feel where content might overlap */
+.card-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  .milzen-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
