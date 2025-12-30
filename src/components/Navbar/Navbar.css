@@ -32,7 +32,8 @@
   left: 0;
   width: 100%;
 
-  z-index: 10; /* keep it above slider */
+  z-index: 10;
+  /* keep it above slider */
 }
 
 .logo {
@@ -54,7 +55,7 @@
 .links li a {
   text-decoration: none;
   color: #111;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -146,7 +147,8 @@
 .hero-container {
   /* height = remaining viewport minus navbar */
   height: calc(100vh - 64px);
-  margin-top: 64px; /* push content under navbar */
+  margin-top: 64px;
+  /* push content under navbar */
   overflow: hidden;
 }
 
