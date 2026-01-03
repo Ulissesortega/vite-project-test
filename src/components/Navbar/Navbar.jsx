@@ -12,7 +12,13 @@ export default function Navbar() {
       <ul className={`links ${isOpen ? 'open' : ''}`}>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/MilzenKC">Kitchen Cabinets</Link></li>
-        <li><Link to="/countertops">Countertops</Link></li>
+        <li className="dropdown">
+          <Link to="/countertops">Countertops <span className="arrow">▼</span></Link>
+          <ul className="dropdown-content">
+            <li><Link to="/quartz">Quartz</Link></li>
+            <li><Link to="/granite">Granite</Link></li>
+          </ul>
+        </li>
       </ul>
 
       <div className="cta">

@@ -163,3 +163,87 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* =========================
+   Dropdown Menu
+========================= */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 4px;
+  padding: 8px 0;
+  flex-direction: column;
+  /* Ensure it stacks in column */
+}
+
+.dropdown-content li {
+  padding: 0;
+  border: none;
+}
+
+.dropdown-content li a {
+  padding: 10px 16px;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Show on hover for desktop */
+@media (min-width: 1025px) {
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    /* or block */
+  }
+}
+
+.arrow {
+  font-size: 10px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* Mobile adjustments for dropdown */
+@media (max-width: 1024px) {
+  .dropdown-content {
+    position: static;
+    display: none;
+    /* Hidden by default, maybe require click to toggle? Or just always show? */
+    box-shadow: none;
+    padding-left: 20px;
+    background: transparent;
+  }
+
+  /* For simplicity on mobile, we might just show it or allow hover if it supports it, 
+     but usually click is better. Since we don't have a click handler for the submenu specifically yet,
+     ignoring refined mobile toggle interactions. defaulting to hover or just always displaying if straightforward css allows.
+     However, standard behavior might just be showing it flat or using :focus-within if possible. 
+     Let's just make it visible by default on mobile open menu for now to ensure access without JS changes? 
+     Or simpler: just stick to :hover which works on some touch, or let user click the main link? 
+     The main link goes to /countertops. 
+     I'll set it to display: block inside the open menu for mobile to avoid complex JS state. */
+
+  .links.open .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content li a {
+    font-size: 18px;
+    /* Slightly smaller than main links */
+  }
+}
