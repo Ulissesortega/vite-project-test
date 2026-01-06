@@ -140,29 +140,7 @@
   }
 }
 
-/* =========================
-   Hero Slider Container
-========================= */
-
-.hero-container {
-  /* height = remaining viewport minus navbar */
-  height: calc(100vh - 64px);
-  margin-top: 64px;
-  /* push content under navbar */
-  overflow: hidden;
-}
-
-/* Swiper slider fills container */
-.mySwiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* Hero styles moved to Home.css */
 
 /* =========================
    Dropdown Menu

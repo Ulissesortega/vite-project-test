@@ -12,17 +12,9 @@ import './Slider.css';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 export default function Slider() {
-  const images = [
-    'https://picsum.photos/id/1018/1200/600',
-    'https://picsum.photos/id/1015/1200/600',
-    'https://picsum.photos/id/1016/1200/600',
-    'https://picsum.photos/id/1020/1200/600',
-    'https://picsum.photos/id/1024/1200/600',
-    'https://picsum.photos/id/1025/1200/600',
-    'https://picsum.photos/id/1027/1200/600',
-    'https://picsum.photos/id/1031/1200/600',
-    'https://picsum.photos/id/1035/1200/600',
-  ];
+  // Import all images from the MilzenKC directory
+  const imagesGlob = import.meta.glob('../../assets/MilzenKC/*.webp', { eager: true });
+  const images = Object.values(imagesGlob).map((mod) => mod.default);
 
   return (
     <Swiper
@@ -40,7 +32,15 @@ export default function Slider() {
     >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
-          <img src={src} alt={`Slide ${index + 1}`} />
+          <div className="slide-content">
+            {/* Blurred Background */}
+            <div 
+              className="slide-bg" 
+              style={{ backgroundImage: `url(${src})` }} 
+            />
+            {/* Foreground Image */}
+            <img src={src} alt={`Slide ${index + 1}`} className="slide-img" />
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
